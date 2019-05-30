@@ -3,8 +3,8 @@ import time
 import random
 import os
 
-lower = 10
-upper = 101
+low = 10
+high = 101
 
 def getBetween (low, high):
     return random.randint (low, high+1)
