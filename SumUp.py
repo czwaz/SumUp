@@ -5,7 +5,6 @@ import os
 
 lower = 10
 upper = 101
-sum = 0
 
 def getBetween (low, high):
     return random.randint (low, high+1)
@@ -21,19 +20,22 @@ def get1_100_10 ():
 
 getNum = get1_10_1
 
+def stats (num_list):
+    for idx, num in enumerate (num_list):
+        print ('%3d  -->  %4d' % (num, sum (num_list [:idx+1])))
+    print ('Result: ', sum (num_list))
 
 def main ():
-    global sum
-    print ('main:')
+    num_list = []
     while True:
         os.system ('cls')
         num = getNum ()
-        print (num)
-        sum = sum + num
+        num_list.append (num)
+        print (num, '\t\tinsert \'q\' to exit!!!')
         ins = input ()
         if (ins == 'q'):
             break
-    print ('The sum is: ', sum)
+    stats (num_list)
 
 if __name__ == "__main__":
     main ()
